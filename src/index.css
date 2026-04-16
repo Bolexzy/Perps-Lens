@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+/* ── Global base ───────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mono font for wallet addresses */
+.font-mono {
+  font-family: 'Menlo', 'Monaco', 'Cascadia Code', 'Consolas', monospace;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+/* ── Animations ────────────────────────────────────────────────── */
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+
+@keyframes orb-pulse {
+  0%, 100% { opacity: 0.22; transform: scale(1); }
+  50%       { opacity: 0.52; transform: scale(1.1); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradient-shimmer {
+  0%   { background-position: 0%   50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0%   50%; }
+}
+
+@keyframes border-glow {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.animate-hero-float  { animation: hero-float  5s ease-in-out infinite; }
+.animate-orb-pulse   { animation: orb-pulse   7s ease-in-out infinite; }
+.animate-fade-up     { animation: fade-up     0.55s ease-out both; }
+.animate-border-glow { animation: border-glow 2.5s ease-in-out infinite; }
+.animate-spin-slow   { animation: spin-slow   3s linear infinite; }
+
+/* ── Gradient text ─────────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #e0f2fe 45%, #7dd3fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-animated {
+  background: linear-gradient(90deg, #ffffff 0%, #7dd3fc 35%, #818cf8 65%, #ffffff 100%);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shimmer 6s ease infinite;
+}
+
+/* ── Glass card ────────────────────────────────────────────────── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: background 0.2s, border-color 0.2s;
+}
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.045);
+  border-color: rgba(56, 189, 248, 0.2);
+}
+
+/* ── Gradient border button ────────────────────────────────────── */
+.grad-border-btn {
+  position: relative;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(56,189,248,0.35), rgba(129,140,248,0.35));
+  padding: 1px;
+}
+.grad-border-btn > * {
+  border-radius: 7px;
+  background: #0a1628;
+}
+
+/* ── Nav link ──────────────────────────────────────────────────── */
+.nav-link {
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 13px;
+  color: rgba(148, 163, 184, 1); /* slate-400 */
+  transition: color 0.15s, background 0.15s;
+}
+.nav-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+.nav-link-active {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
+}
+
+/* ── Search input glow on focus-within ─────────────────────────── */
+.search-wrap:focus-within {
+  border-color: rgba(56, 189, 248, 0.3) !important;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.12), 0 4px 24px rgba(56, 189, 248, 0.06);
+}
