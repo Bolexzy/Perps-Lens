@@ -2,12 +2,6 @@
 
 Perps Lens is a responsive Pacifica portfolio dashboard for Solana perpetual traders. Paste a wallet address and the app pulls live Pacifica account data, surfaces portfolio and risk metrics, renders activity tables, and generates lightweight AI insights.
 
-## Repo Description
-
-Use this for the GitHub repo description:
-
-`Responsive Pacifica perps analytics dashboard with live wallet metrics, activity history, and AI insights.`
-
 ## Highlights
 
 - Live Pacifica account, position, funding, order, balance, and portfolio volume data
